@@ -1,0 +1,14 @@
+[package]
+name = "fingerling"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "fingerling"
+crate-type = ["cdylib"]
+
+[dependencies]
+byteorder = "1.5.0"
+flate2 = "1.0.28"
+pyo3 = "0.20.0"
