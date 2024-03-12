@@ -35,23 +35,21 @@ def read_quants_bin(
         msg = f"{base_location} is not a directory"
         raise ValueError(msg)
 
-    base_sub_location = base_location.joinpath(base_location, "alevin")
-
-    if not base_sub_location.exists():
-        msg = f"{base_sub_location} directory doesn't exist"
+    if not base_location.exists():
+        msg = f"{base_location} directory doesn't exist"
         raise FileNotFoundError(msg)
 
     data_type = "f"
     match mtype:
         case "data":
-            quant_file = base_sub_location.joinpath("quants_mat.gz")
+            quant_file = base_location.joinpath("quants_mat.gz")
         case "tier":
             data_type = "B"
-            quant_file = base_sub_location.joinpath("quants_tier_mat.gz")
+            quant_file = base_location.joinpath("quants_tier_mat.gz")
         case "mean":
-            quant_file = base_sub_location.joinpath("quants_mean_mat.gz")
+            quant_file = base_location.joinpath("quants_mean_mat.gz")
         case "var":
-            quant_file = base_sub_location.joinpath("quants_var_mat.gz")
+            quant_file = base_location.joinpath("quants_var_mat.gz")
         case _:
             msg = f"wrong mtype: {mtype}"
             raise ValueError(msg)
@@ -61,15 +59,15 @@ def read_quants_bin(
         raise FileNotFoundError(msg)
 
     if mtype in ["mean", "var"]:
-        cb_file = base_sub_location.joinpath("quants_boot_rows.txt")
+        cb_file = base_location.joinpath("quants_boot_rows.txt")
     else:
-        cb_file = base_sub_location.joinpath("quants_mat_rows.txt")
+        cb_file = base_location.joinpath("quants_mat_rows.txt")
 
     if not cb_file.exists():
         msg = f"The cell barcode file expected at {cb_file} doesn't exist"
         raise FileNotFoundError(msg)
 
-    feature_file = base_sub_location.joinpath("quants_mat_cols.txt")
+    feature_file = base_location.joinpath("quants_mat_cols.txt")
 
     if not feature_file.exists():
         msg = f"The feature header expected at {feature_file} doesn't exist"
