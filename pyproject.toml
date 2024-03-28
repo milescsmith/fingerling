@@ -28,14 +28,14 @@ module-name = "fingerling"
 
 [tool.poetry]
 name = "fingerling"
-version = "0.1.0"
+version = "0.1.1"
 description = "Support package for Alevin tools. Updated and repackaged version of k3yavi/vpolo"
 authors = ["Sanskar Jethi <sansyrox@gmail.com>", "Miles Smith <miles-smith@omrf.org>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 maturin = "0.15.0"
-pandas = "^2.2.1"
+pandas = ">2.1"
 numpy = "^1.26.4"
 scipy = "^1.12.0"
 
