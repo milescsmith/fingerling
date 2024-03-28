@@ -34,7 +34,7 @@ authors = ["Sanskar Jethi <sansyrox@gmail.com>", "Miles Smith <miles-smith@omrf.
 
 [tool.poetry.dependencies]
 python = ">=3.10"
-maturin = "0.15.0"
+maturin = "1.5.1"
 pandas = ">2.1"
 numpy = "^1.26.4"
 scipy = "^1.12.0"
