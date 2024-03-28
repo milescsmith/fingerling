@@ -13,7 +13,6 @@ use std::path::Path;
 use byteorder::{ByteOrder, LittleEndian};
 use flate2::read::GzDecoder;
 
-/// Formats the sum of two numbers as string.
 #[pyfunction]
 fn read_eds(_py: Python, val: &str, num_rows: u64, num_cols: u64) -> PyResult<(Vec<usize>, Vec<usize>, Vec<MatValT>)> {
     let fpath = Path::new(val);

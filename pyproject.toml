@@ -4,44 +4,40 @@ build-backend = "maturin"
 
 [project]
 name = "fingerling"
+version = "0.2.0"
+description = "Support package for Alevin tools. Updated and repackaged version of k3yavi/vpolo"
+authors = [
+    { name = "Sanskar Jethi", email = "sansyrox@gmail.com>" },
+    { name = "Miles Smith", email = "miles-smith@omrf.org"}
+]
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dynamic = ["version"]
 dependencies = [
-    "pandas",
-    "numpy",
-    "scipy"
+    "maturin>=0.15.0",
+    "pandas>=2.1",
+    "numpy>=1.26.4",
+    "scipy>=1.12.0"
 ]
 
 [project.urls]
-Repository = "https://github.com/milescsmith/fingerling"
-Issues = "https://github.com/milescsmith/fingerling/issues"
-Changelog = "https://github.com/milescsmith/fingerling/blob/main/CHANGELOG.md"
+homepage = "https://github.com/milescsmith/fingerling"
+repository = "https://github.com/milescsmith/fingerling"
+changelog = "https://github.com/milescsmith/fingerling/blob/main/CHANGELOG.md"
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
 module-name = "fingerling"
 
-[tool.poetry]
-name = "fingerling"
-version = "0.1.1"
-description = "Support package for Alevin tools. Updated and repackaged version of k3yavi/vpolo"
-authors = ["Sanskar Jethi <sansyrox@gmail.com>", "Miles Smith <miles-smith@omrf.org>"]
+[tool.pdm]
+distribution = false
 
-[tool.poetry.dependencies]
-python = "^3.10"
-maturin = "0.15.0"
-pandas = ">2.1"
-numpy = "^1.26.4"
-scipy = "^1.12.0"
-
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.3.0"
-black = "^24.2.0"
-mypy = "^1.8.0"
-sourcery = "^1.15.0"
-
+[tool.pdm.dev-dependencies]
+dev = [
+    "pre-commit>=3.7.1",
+    "ruff>=0.5.4",
+    "mypy>=1.11.0"
+]
