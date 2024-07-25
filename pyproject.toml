@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "fingerling"
-version = "0.2.0"
+version = "1.0.0"
 description = "Support package for Alevin tools. Updated and repackaged version of k3yavi/vpolo"
 authors = [
     { name = "Sanskar Jethi", email = "sansyrox@gmail.com>" },
@@ -39,5 +39,13 @@ distribution = false
 dev = [
     "pre-commit>=3.7.1",
     "ruff>=0.5.4",
-    "mypy>=1.11.0"
+    "mypy>=1.11.0",
+    "pytest>=8.3.2",
+    "nox>=2024.4.15",
 ]
+
+[tool.pdm.scripts]
+format = "ruff format src/"
+lint = "ruff check --fix src/"
+test = "nox"
+all = {composite = ["format", "lint", "test"]}

@@ -1,5 +1,16 @@
 # Changelog
 
+# [1.0.0]
+
+## Added
+
+- Unit test
+- pre-commit checks
+
+## Changed
+
+- Rust linting
+
 # [0.2.0]
 
 ## Changed

@@ -28,7 +28,10 @@ venv/
 *.egg-info/
 .installed.cfg
 *.egg
-
+.ruff_cache/
+.github/
+.pdm-python
+.sourcery.yaml
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
