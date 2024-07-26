@@ -1,5 +1,33 @@
 # Changelog
 
+# [1.0.0]
+
+## Added
+
+- Unit test
+- pre-commit checks
+
+## Changed
+
+- Rust linting
+
+# [0.2.0]
+
+## Changed
+
+- Replaced use of poetry with pdm
+- Removed unused functions in `fingerling.__main__`
+
+## Fixed
+
+- Repaired all issues in `pyproject.toml`
+
+# [0.1.2]
+
+## Changed
+
+- Update dependencies
+
 # [0.1.0]
 
 ## Added

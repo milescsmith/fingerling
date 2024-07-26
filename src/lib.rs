@@ -1,5 +1,5 @@
-extern crate flate2;
 extern crate byteorder;
+extern crate flate2;
 
 use pyo3::prelude::*;
 
@@ -14,7 +14,12 @@ use byteorder::{ByteOrder, LittleEndian};
 use flate2::read::GzDecoder;
 
 #[pyfunction]
-fn read_eds(_py: Python, val: &str, num_rows: u64, num_cols: u64) -> PyResult<(Vec<usize>, Vec<usize>, Vec<MatValT>)> {
+fn read_eds(
+    _py: Python,
+    val: &str,
+    num_rows: u64,
+    num_cols: u64,
+) -> PyResult<(Vec<usize>, Vec<usize>, Vec<MatValT>)> {
     let fpath = Path::new(val);
     let mat = reader(fpath, num_rows as usize, num_cols as usize).expect("can't read the EDS file");
 
@@ -75,7 +80,7 @@ pub fn reader(
     num_cols: usize,
 ) -> Result<SpMatrix, Box<dyn Error>> {
     // reading the matrix
-    let file_handle = File::open(file_path.to_owned())?;
+    let file_handle = File::open(file_path)?;
     let buffered = BufReader::new(file_handle);
     let file = GzDecoder::new(buffered);
 
@@ -125,6 +130,10 @@ pub fn reader(
     }
 
     assert_eq!(global_pointer, total_nnz);
-    let matrix = SpMatrix{i: bit_vector_lengths, j: indices, k: data};
+    let matrix = SpMatrix {
+        i: bit_vector_lengths,
+        j: indices,
+        k: data,
+    };
     Ok(matrix)
 }

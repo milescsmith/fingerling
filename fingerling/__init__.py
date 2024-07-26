@@ -1,6 +1,6 @@
 from importlib.metadata import PackageNotFoundError, metadata, version
 
-from .__main__ import read_quants_bin
+from fingerling.__main__ import read_quants_bin
 
 try:
     __version__ = version(__name__)
