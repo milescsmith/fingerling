@@ -28,7 +28,7 @@ fn read_eds(
 
 /// A Python module implemented in Rust.
 #[pymodule]
-pub fn fingerling(_py: Python, m: &PyModule) -> PyResult<()> {
+pub fn fingerling(_py: Python, m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(read_eds, m)?)?;
     Ok(())
 }

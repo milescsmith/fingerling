@@ -1,7 +1,7 @@
 [package]
 name = "fingerling"
-version = "0.1.0"
-edition = "2021"
+version = "0.2.0"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
@@ -10,5 +10,5 @@ crate-type = ["cdylib"]
 
 [dependencies]
 byteorder = "1.5.0"
-flate2 = "1.0.28"
-pyo3 = "0.20.0"
+flate2 = "1.1.2"
+pyo3 = {version = "0.25.1", features = ["abi3-py312"]}

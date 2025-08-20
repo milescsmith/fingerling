@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.1.0] - 2025-08-19
+
+## Changed
+
+- Update dependencies
+- Swap out pdm for uv
+
 # [1.0.0]
 
 ## Added
